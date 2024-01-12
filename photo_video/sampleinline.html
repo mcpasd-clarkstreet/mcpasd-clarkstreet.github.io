@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Photo Gallery Sample</title>
+
+ <style>
+
+
+.fancybox-caption {
+    /* background: linear-gradient(to top,
+        rgba(0, 0, 0, .85) 0%,
+        rgba(0, 0, 0, .3) 50%,
+        rgba(0, 0, 0, .15) 65%,
+        rgba(0, 0, 0, .075) 75.5%,
+        rgba(0, 0, 0, .037) 82.85%,
+        rgba(0, 0, 0, .019) 88%,
+        rgba(0, 0, 0, 0) 100%); */
+    bottom: 0px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 400;
+    left: 0;
+    line-height: 1.5;
+    padding: 10px 0px 0px 0px;
+    pointer-events: none;
+    right: 0;
+    text-align: center;
+    z-index: 99996;
+}
+
+
+.fancybox-caption__body {
+    padding: 10px;
+    display: table;
+    margin: 0px auto 0px auto; 
+    border-radius: 5px;
+}
+    
+
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="../fancybox3/source/jquery.fancybox_photos.css">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <script src="../fancybox3/lib/jquery-3.5.1.min.js"></script>
+    <script src="../fancybox3/source/jquery.fancybox.js"></script>
+
+    <!-- photo gallery colors-->
+    <link rel="stylesheet" type="text/css" href="gallerycolors.css">
+
+   
+
+</head>
+
+<body style="background-color:transparent;">
+
+<div style="display: none;" id="hidden-content" class="inline" >
+<h3>Add title here</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempus dictum tortor nec posuere. Aliquam tempus augue et pulvinar sagittis. Morbi tristique ante ac mauris tristique interdum. Nunc lacinia tortor in sagittis aliquet. Mauris gravida libero nibh, eget lacinia nisi aliquam non. Sed non justo semper, facilisis eros eget, lacinia tellus. Donec mollis leo et neque euismod, a dapibus felis feugiat. Phasellus eu nisi in odio vulputate luctus. Nulla sed ipsum consequat urna accumsan fermentum. Sed eu vulputate tellus. Vestibulum id risus est. Integer massa tellus, venenatis ac dapibus quis, tempus volutpat lorem. Vivamus tincidunt sagittis ligula non ornare. Curabitur consequat vitae est vitae varius. Praesent nulla diam, hendrerit quis sodales ac, ullamcorper a neque.</p>
+</div>
+
+    <div class="content">
+        <div class="wrapper" style="text-align:center; display:none; ">
+            
+            <a data-fancybox="gallery" data-src="#hidden-content" href="javascript:;" id="img01" ></a>
+
+            <a data-fancybox="gallery" href="sample/sample_01.jpg" data-caption="Sample of a short caption" ></a>
+
+            <a data-fancybox="gallery" href="sample/sample_02.jpg" data-caption="Sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption sample of a long caption " ></a>
+
+            <a data-fancybox="gallery" href="sample/sample_01.jpg" data-caption="Sample of with a <a href='#'>link</a>"></a>
+
+           
+
+            <a data-fancybox="gallery" href="https://www.youtube.com/embed/EngW7tLk6R8?rel=0&fs=1&autoplay=1" data-caption="Sample Youtube Video" ></a>
+
+
+            <a data-fancybox="gallery" href="https://vimeo.com/253989945" data-caption="Sample Vimeo Video"></a>
+            
+
+            <!-- add for iframe html content 
+
+            <a data-fancybox="gallery" data-type="iframe" data-src="../text/xxxx.html" href="javascript:;"></a>
+            -->
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // JavaScript source code
+        $(document).ready(function () {
+            LoadFancyBox();
+            $('#img01').click();
+        });
+
+        function LoadFancyBox() {
+            var PageTitle = $('#PageTitle').html();
+
+            $('[data-fancybox="gallery"]').fancybox({
+        infobar: true,
+        smallBtn: false,
+        toolbar: false,
+        buttons: ["zoom"],
+        loop: true,
+        transitionEffect: "slide",
+        clickOutside : false,
+        clickSlide: false,
+        arrows: true,  //change this to false if ony one image
+        //preventCaptionOverlap: false,
+    });
+}
+    </script>
+</body>
+</html>
